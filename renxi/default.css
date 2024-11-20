@@ -1,18 +1,129 @@
-body{margin:0;padding:0;background:#ffe;font-size:14px;font-family:'微软雅黑','宋体',sans-serif;color:#231F20;overflow:auto}
-a {color:#000;font-size:14px;}
-#main{width:100%;}
-#wrap{position:relative;margin:0 auto;width:1100px;height:680px;margin-top:10px;}
-#text{width:400px;height:425px;left:60px;top:80px;position:absolute;}
-#code{display:none;font-size:16px;}
-#clock-box {position:absolute;left:60px;top:550px;font-size:28px;display:none;}
-#clock-box a {font-size:28px;text-decoration:none;}
-#clock{margin-left:48px;}
-#clock .digit {font-size:64px;}
-#canvas{margin:0 auto;width:1100px;height:680px;}
-#error{margin:0 auto;text-align:center;margin-top:60px;display:none;}
-.hand{cursor:pointer;}
-.say{margin-left:5px;font-family: "Playwrite CZ", cursive;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;}
-.space{margin-right:150px;}
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffe;
+    font-size: 14px;
+    font-family: '微软雅黑', '宋体', sans-serif;
+    color: #231F20;
+    overflow: auto;
+}
+
+a {
+    color: #000;
+    font-size: 1em; /* sử dụng em để dễ dàng thay đổi kích thước */
+}
+
+#main {
+    width: 100%;
+}
+
+#wrap {
+    position: relative;
+    margin: 0 auto;
+    width: 90%; /* thay vì cố định 1100px */
+    max-width: 1100px;
+    height: auto; /* để chiều cao tự điều chỉnh theo nội dung */
+    margin-top: 10px;
+}
+
+#text {
+    width: 90%; /* responsive theo khung cha */
+    max-width: 400px;
+    height: auto; /* tự điều chỉnh chiều cao */
+    left: 5%;
+    top: 80px;
+    position: absolute;
+}
+
+#code {
+    display: none;
+    font-size: 1rem;
+}
+
+#clock-box {
+    position: absolute;
+    left: 5%;
+    top: calc(100% - 100px); /* cách dưới 100px */
+    font-size: 1.75rem;
+    display: none;
+}
+
+#clock-box a {
+    font-size: 1.75rem;
+    text-decoration: none;
+}
+
+#clock {
+    margin-left: 5%;
+}
+
+#clock .digit {
+    font-size: 4rem; /* responsive kích thước chữ */
+}
+
+#canvas {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
+}
+
+#error {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 60px;
+    display: none;
+}
+
+.hand {
+    cursor: pointer;
+}
+
+.say {
+    margin-left: 5px;
+    font-family: "Playwrite CZ", cursive;
+    font-optical-sizing: auto;
+    font-weight: normal; /* hoặc dùng giá trị phù hợp */
+    font-style: normal;
+}
+
+.space {
+    margin-right: 10%;
+}
+
+/* Media Queries cho responsive */
+@media (max-width: 768px) {
+    #wrap {
+        width: 100%;
+    }
+
+    #text {
+        left: 2%;
+        width: 96%;
+        top: 50px;
+    }
+
+    #clock-box {
+        left: 2%;
+        font-size: 1.5rem;
+    }
+
+    #clock .digit {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #text {
+        top: 30px;
+        font-size: 12px;
+    }
+
+    #clock-box {
+        font-size: 1.25rem;
+    }
+
+    #clock .digit {
+        font-size: 2.5rem;
+    }
+}
